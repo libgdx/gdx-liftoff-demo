@@ -23,18 +23,19 @@ allprojects {
 
 configure(subprojects - project(':android')) {
   apply plugin: 'java-library'
-  sourceCompatibility = 1.8
+  sourceCompatibility = 11
   compileJava {
     options.incremental = true
   }
 }
 
 subprojects {
-  version = '1.11.0.7'
+  version = '1.11.0.8'
   ext.appName = 'gdx-liftoff-demo'
   repositories {
     mavenCentral()
     maven { url 'https://s01.oss.sonatype.org' }
+    // You may want to remove the following line if you have errors downloading dependencies.
     mavenLocal()
     gradlePluginPortal()
     maven { url 'https://oss.sonatype.org/content/repositories/snapshots/' }
