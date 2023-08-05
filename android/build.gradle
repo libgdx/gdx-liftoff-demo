@@ -45,14 +45,12 @@ android {
     targetCompatibility "11"
     coreLibraryDesugaringEnabled true
   }
-  
   buildTypes {
     release {
       minifyEnabled true
       proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
     }
   }
-
 }
 
 repositories {
