@@ -4,7 +4,6 @@ buildscript {
     maven { url 'https://s01.oss.sonatype.org' }
     mavenLocal()
     google()
-    gradlePluginPortal()
     maven { url 'https://oss.sonatype.org/content/repositories/snapshots/' }
     maven { url 'https://s01.oss.sonatype.org/content/repositories/snapshots/' }
   }
@@ -29,7 +28,7 @@ configure(subprojects - project(':android')) {
 }
 
 subprojects {
-  version = '1.12.1.0'
+  version = '1.12.1.1'
   ext.appName = 'gdx-liftoff-demo'
   repositories {
     mavenCentral()

@@ -41,7 +41,7 @@ dependencies {
   implementation "com.badlogicgames.gdx:gdx:$gdxVersion:sources"
   implementation "com.github.tommyettinger:gdx-backend-gwt:1.1210.0"
   implementation "com.github.tommyettinger:gdx-backend-gwt:1.1210.0:sources"
-  implementation "com.google.jsinterop:jsinterop-annotations:2.0.0:sources"
+  implementation "com.google.jsinterop:jsinterop-annotations:2.0.2:sources"
   implementation project(':core')
 
 }

@@ -8,6 +8,9 @@ buildscript {
     if (JavaVersion.current().isCompatibleWith(JavaVersion.VERSION_14)) {
       classpath "org.beryx:badass-runtime-plugin:1.13.0"
     }
+    if(enableGraalNative == 'true') {
+      classpath "org.graalvm.buildtools.native:org.graalvm.buildtools.native.gradle.plugin:0.9.28"
+    }
   }
 }
 if (JavaVersion.current().isCompatibleWith(JavaVersion.VERSION_14)) {
@@ -33,6 +36,7 @@ dependencies {
   implementation project(':core')
 }
 
+def jarName = "${appName}-${version}.jar"
 def os = System.properties['os.name'].toLowerCase()
 
 run {
@@ -47,7 +51,7 @@ run {
 
 jar {
 // sets the name of the .jar file this produces to the name of the game or app.
-  archiveBaseName.set(appName)
+  archiveFileName.set(jarName)
 // using 'lib' instead of the default 'libs' appears to be needed by jpackageimage.
   destinationDirectory = file("${project.layout.buildDirectory.asFile.get().absolutePath}/lib")
 // the duplicatesStrategy matters starting in Gradle 7.0; this setting works.
@@ -90,7 +94,7 @@ if (JavaVersion.current().isCompatibleWith(JavaVersion.VERSION_14)) {
       skipInstaller = true
 // this may need to be set to a different path if your JAVA_HOME points to a low JDK version.
       jpackageHome = javaHome.getOrElse("")
-      mainJar = jar.archiveFileName.get()
+      mainJar = jarName
       if (os.contains('win')) {
         imageOptions = ["--icon", "icons/logo.ico"]
       } else if (os.contains('nix') || os.contains('nux') || os.contains('bsd')) {
@@ -108,4 +112,8 @@ if (JavaVersion.current().isCompatibleWith(JavaVersion.VERSION_14)) {
 // Equivalent to the jar task; here for compatibility with gdx-setup.
 tasks.register('dist') {
   dependsOn['jar']
+}
+
+if(enableGraalNative == 'true') {
+  apply from: file("nativeimage.gradle")
 }
