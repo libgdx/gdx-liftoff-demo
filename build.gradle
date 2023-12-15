@@ -2,6 +2,7 @@ buildscript {
   repositories {
     mavenCentral()
     maven { url 'https://s01.oss.sonatype.org' }
+    gradlePluginPortal()
     mavenLocal()
     google()
     maven { url 'https://oss.sonatype.org/content/repositories/snapshots/' }
@@ -17,6 +18,14 @@ buildscript {
 allprojects {
   apply plugin: 'eclipse'
   apply plugin: 'idea'
+
+  // This allows you to "Build and run using IntelliJ IDEA", an option in IDEA's Settings.
+  idea {
+    module {
+      outputDir file('build/classes/java/main')
+      testOutputDir file('build/classes/java/test')
+    }
+  }
 }
 
 configure(subprojects - project(':android')) {
@@ -45,7 +54,7 @@ configure(subprojects - project(':android')) {
 }
 
 subprojects {
-  version = '1.12.1.3'
+  version = '1.12.1.4'
   ext.appName = 'gdx-liftoff-demo'
   repositories {
     mavenCentral()
