@@ -137,7 +137,8 @@ task dist(dependsOn: [clean, compileGwt]) {
 task addSource {
   doLast {
     sourceSets.main.compileClasspath += files(project(':core').sourceSets.main.allJava.srcDirs)
-    
+    sourceSets.main.compileClasspath += files("../core/build/generated/sources/annotationProcessor/java/main")
+
   }
 }
 

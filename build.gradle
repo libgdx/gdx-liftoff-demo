@@ -51,16 +51,10 @@ configure(subprojects - project(':android')) {
       assetsFile.append(it + "\n")
     }
   }
-
-  java {
-    toolchain {
-      languageVersion = JavaLanguageVersion.of(11)
-    }
-  }
 }
 
 subprojects {
-  version = '1.12.1.6'
+  version = '1.12.1.8'
   ext.appName = 'gdx-liftoff-demo'
   repositories {
     mavenCentral()
