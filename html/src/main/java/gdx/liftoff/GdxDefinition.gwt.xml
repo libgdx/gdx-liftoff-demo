@@ -1,7 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE module PUBLIC "-//Google Inc.//DTD Google Web Toolkit 2.11.0//EN" "https://www.gwtproject.org/doctype/2.11.0/gwt-module.dtd">
 <module rename-to="html">
+  <!-- Paths to source are relative to this file and separated by slashes ('/'). -->
   <source path="" />
+
+  <!-- Reflection includes may be needed for your code or library code. Each value is separated by periods ('.'). -->
+  <!-- You can include a full package by not including the name of a type at the end. -->
+  <!-- <extend-configuration-property name="gdx.reflect.include" value="fully.qualified.TypeName" /> -->
+
+  <!-- Rarely, projects may need to include files but do not have access to the complete assets. -->
+  <!-- This happens for libraries and shared projects, typically, and the configuration goes in that project. -->
+  <!-- You can include individual files like this, and access them with Gdx.files.classpath("path/to/file.png") : -->
+  <!-- <extend-configuration-property name="gdx.files.classpath" value="path/to/file.png" /> -->
+
+  <!-- "Inherits" lines are how GWT knows where to look for code and configuration in other projects or libraries. -->
   <inherits name="com.badlogic.gdx.backends.gdx_backends_gwt" />
   <inherits name="Box2DLights" />
   <inherits name="com.badlogic.ashley_gwt" />
@@ -10,7 +22,11 @@
   <inherits name="com.badlogic.gdx.controllers.controllers-gwt" />
   <inherits name="com.badlogic.gdx.physics.box2d.box2d-gwt" />
   <inherits name="gdx.liftoff.Main" />
+
+  <!-- You must change this if you rename packages later, or rename GwtLauncher. -->
   <entry-point class="gdx.liftoff.gwt.GwtLauncher" />
+
+  <!-- You usually won't need to make changes to the rest of this. -->
   <set-configuration-property name="gdx.assetpath" value="../assets" />
   <set-configuration-property name="xsiframe.failIfScriptTag" value="FALSE"/>
   <!-- These two lines reduce the work GWT has to do during compilation and also shrink output size. -->
