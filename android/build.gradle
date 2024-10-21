@@ -4,9 +4,6 @@ buildscript {
     mavenCentral()
     google()
   }
-  dependencies {
-    classpath 'com.android.tools.build:gradle:8.5.2'
-  }
 }
 apply plugin: 'com.android.application'
 
@@ -63,6 +60,7 @@ configurations { natives }
 
 dependencies {
   coreLibraryDesugaring 'com.android.tools:desugar_jdk_libs:2.0.4'
+  implementation "androidx.core:core:1.13.1"
   implementation "com.badlogicgames.gdx-controllers:gdx-controllers-android:$gdxControllersVersion"
   implementation "com.badlogicgames.gdx:gdx-backend-android:$gdxVersion"
   implementation project(':core')
