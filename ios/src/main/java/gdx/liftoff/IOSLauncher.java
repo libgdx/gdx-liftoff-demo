@@ -1,4 +1,4 @@
-package gdx.liftoff.ios;
+package gdx.liftoff;
 
 import org.robovm.apple.foundation.NSAutoreleasePool;
 import org.robovm.apple.uikit.UIApplication;
