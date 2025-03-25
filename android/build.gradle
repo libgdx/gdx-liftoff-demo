@@ -10,7 +10,7 @@ apply plugin: 'com.android.application'
 
 android {
   namespace "gdx.liftoff"
-  compileSdk 34
+  compileSdk 35
   sourceSets {
     main {
       manifest.srcFile 'AndroidManifest.xml'
@@ -33,7 +33,7 @@ android {
   defaultConfig {
     applicationId 'gdx.liftoff'
     minSdkVersion 19
-    targetSdkVersion 34
+    targetSdkVersion 35
     versionCode 1
     versionName "1.0"
     multiDexEnabled true
