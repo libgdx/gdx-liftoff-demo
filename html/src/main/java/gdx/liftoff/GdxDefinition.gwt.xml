@@ -4,6 +4,10 @@
   <!-- Paths to source are relative to this file and separated by slashes ('/'). -->
   <source path="" />
 
+  <!-- Any resources placed under package public_html, relative to this file, will be copied verbatim into the final webapp folder. -->
+  <!-- This is where you can place your JavaScript, CSS and other resources for advanced JS integration. -->
+  <public path="public_html" />
+
   <!-- "Inherits" lines are how GWT knows where to look for code and configuration in other projects or libraries. -->
   <inherits name="com.badlogic.gdx.backends.gdx_backends_gwt" />
   <inherits name="Box2DLights" />
