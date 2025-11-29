@@ -9,8 +9,8 @@ apply plugin: 'com.android.application'
 
 
 android {
-  namespace "gdx.liftoff"
-  compileSdk 35
+  namespace = "gdx.liftoff"
+  compileSdk = 35
   sourceSets {
     main {
       manifest.srcFile 'AndroidManifest.xml'
@@ -40,7 +40,7 @@ android {
   compileOptions {
     sourceCompatibility "11"
     targetCompatibility "11"
-    coreLibraryDesugaringEnabled true
+    coreLibraryDesugaringEnabled = true
   }
   buildTypes {
     release {
