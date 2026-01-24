@@ -65,6 +65,9 @@ dependencies {
   implementation("com.badlogicgames.gdx-controllers:gdx-controllers-gwt:$gdxControllersVersion:sources"){exclude group: "com.badlogicgames.gdx", module: "gdx-backend-gwt"}
   implementation("com.badlogicgames.gdx:gdx-box2d-gwt:$gdxVersion:sources") {exclude group: "com.google.gwt", module: "gwt-user"}
 
+  constraints {
+    implementation "jakarta.servlet:jakarta.servlet-api:6.1.0"
+  }
 }
 
 //// We delete the (temporary) war/ folder because if any extra files get into it, problems occur.

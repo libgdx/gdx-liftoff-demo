@@ -18,7 +18,6 @@ public class GwtLauncher extends GwtApplication {
             // and uncomment below:
             //return new GwtApplicationConfiguration(640, 480);
         }
-
         @Override
         public ApplicationListener createApplicationListener () {
             return new Main();
