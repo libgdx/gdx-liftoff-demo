@@ -21,14 +21,15 @@ public class TeaVMBuilder {
         }
         new TeaCompiler(
             new WebBackend()
-                .setHtmlWidth(800) // Change this to fit your game's requirements.
-                .setHtmlHeight(600) // Change this to fit your game's requirements.
+                .setHtmlWidth(800) /* Change this to fit your game's requirements. */
+                .setHtmlHeight(600) /* Change this to fit your game's requirements. */
                 .setHtmlTitle("gdx-liftoff-demo")
-//                .setWebAssembly(true) // Uncomment this line to use WASM output instead of JavaScript output.
+                .setWebAssembly(true) /* Comment this line to use JavaScript output instead of WASM output. */
                 .setStartJettyAfterBuild(startJetty)
                 .setJettyPort(8080)
         )
             .addAssets(new AssetFileHandle("../assets"))
+            
             .setOptimizationLevel(debug ? TeaVMOptimizationLevel.SIMPLE : TeaVMOptimizationLevel.ADVANCED)
             .setMainClass(TeaVMLauncher.class.getName())
             .setObfuscated(!debug)
