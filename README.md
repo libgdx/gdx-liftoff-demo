@@ -9,6 +9,7 @@ This project was generated with a template including simple application launcher
 - `core`: Main module with the application logic shared by all platforms.
 - `lwjgl3`: Primary desktop platform using LWJGL3; was called 'desktop' in older docs.
 - `android`: Android mobile platform. Needs Android SDK.
+- `ios`: iOS mobile platform using RoboVM.
 - `teavm`: Web backend that supports most JVM languages.
 
 ## Gradle

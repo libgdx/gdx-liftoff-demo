@@ -10,7 +10,7 @@ apply plugin: 'com.android.application'
 
 android {
   namespace = "gdx.liftoff"
-  compileSdk = 35
+  compileSdk 36
   sourceSets {
     main {
       manifest.srcFile 'AndroidManifest.xml'
@@ -33,13 +33,13 @@ android {
   defaultConfig {
     applicationId 'gdx.liftoff'
     minSdkVersion 21
-    targetSdkVersion 35
+    targetSdkVersion 36
     versionCode 1
     versionName "1.0"
   }
   compileOptions {
-    sourceCompatibility "11"
-    targetCompatibility "11"
+    sourceCompatibility "8"
+    targetCompatibility "8"
     coreLibraryDesugaringEnabled = true
   }
   buildTypes {

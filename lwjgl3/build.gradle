@@ -22,10 +22,10 @@ sourceSets.main.resources.srcDirs += [ rootProject.file('assets').path ]
 application.mainClass = 'gdx.liftoff.lwjgl3.Lwjgl3Launcher'
 application.applicationName = appName
 eclipse.project.name = appName + '-lwjgl3'
-java.sourceCompatibility = 11
-java.targetCompatibility = 11
+java.sourceCompatibility = 8
+java.targetCompatibility = 8
 if (JavaVersion.current().isJava9Compatible()) {
-        compileJava.options.release.set(11)
+        compileJava.options.release.set(8)
 }
 
 dependencies {
@@ -37,7 +37,7 @@ dependencies {
     implementation "io.github.berstanio:gdx-svmhelper-backend-lwjgl3:$graalHelperVersion"
 
   }
-  // Forces LWJGL3 to use at least $lwjgl3Version, currently 3.4.1, to avoid problems on Java 25 and up.
+  // Forces LWJGL3 to use at least $lwjgl3Version, currently 3.4.1, to avoid warnings on Java 25 and up.
   constraints{
     implementation("org.lwjgl:lwjgl:$lwjgl3Version")
     implementation("org.lwjgl:lwjgl-glfw:$lwjgl3Version")
