@@ -16,6 +16,7 @@ public class TeaVMLauncher {
         //// If width and height are both 0, then the app will use all available space.
         config.width = 0;
         config.height = 0;
+        
         new WebApplication(new Main(), config);
     }
 }
